@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as RequestRouteImport } from './routes/request'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as AssociatesIndexRouteImport } from './routes/associates.index'
+import { Route as AssociatesAssociateIdRouteImport } from './routes/associates.$associateId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequestRoute = RequestRouteImport.update({
+  id: '/request',
+  path: '/request',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssociatesIndexRoute = AssociatesIndexRouteImport.update({
+  id: '/associates/',
+  path: '/associates/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssociatesAssociateIdRoute = AssociatesAssociateIdRouteImport.update({
+  id: '/associates/$associateId',
+  path: '/associates/$associateId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/pricing': typeof PricingRoute
+  '/request': typeof RequestRoute
+  '/reviews': typeof ReviewsRoute
+  '/services': typeof ServicesRoute
+  '/associates/$associateId': typeof AssociatesAssociateIdRoute
+  '/associates/': typeof AssociatesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/pricing': typeof PricingRoute
+  '/request': typeof RequestRoute
+  '/reviews': typeof ReviewsRoute
+  '/services': typeof ServicesRoute
+  '/associates/$associateId': typeof AssociatesAssociateIdRoute
+  '/associates': typeof AssociatesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/pricing': typeof PricingRoute
+  '/request': typeof RequestRoute
+  '/reviews': typeof ReviewsRoute
+  '/services': typeof ServicesRoute
+  '/associates/$associateId': typeof AssociatesAssociateIdRoute
+  '/associates/': typeof AssociatesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/pricing'
+    | '/request'
+    | '/reviews'
+    | '/services'
+    | '/associates/$associateId'
+    | '/associates/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/pricing'
+    | '/request'
+    | '/reviews'
+    | '/services'
+    | '/associates/$associateId'
+    | '/associates'
+  id:
+    | '__root__'
+    | '/'
+    | '/pricing'
+    | '/request'
+    | '/reviews'
+    | '/services'
+    | '/associates/$associateId'
+    | '/associates/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PricingRoute: typeof PricingRoute
+  RequestRoute: typeof RequestRoute
+  ReviewsRoute: typeof ReviewsRoute
+  ServicesRoute: typeof ServicesRoute
+  AssociatesAssociateIdRoute: typeof AssociatesAssociateIdRoute
+  AssociatesIndexRoute: typeof AssociatesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request': {
+      id: '/request'
+      path: '/request'
+      fullPath: '/request'
+      preLoaderRoute: typeof RequestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/associates/': {
+      id: '/associates/'
+      path: '/associates'
+      fullPath: '/associates/'
+      preLoaderRoute: typeof AssociatesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/associates/$associateId': {
+      id: '/associates/$associateId'
+      path: '/associates/$associateId'
+      fullPath: '/associates/$associateId'
+      preLoaderRoute: typeof AssociatesAssociateIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PricingRoute: PricingRoute,
+  RequestRoute: RequestRoute,
+  ReviewsRoute: ReviewsRoute,
+  ServicesRoute: ServicesRoute,
+  AssociatesAssociateIdRoute: AssociatesAssociateIdRoute,
+  AssociatesIndexRoute: AssociatesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
