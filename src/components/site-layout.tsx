@@ -15,9 +15,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-40 border-b border-border/80 bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
           <Link to="/" className="flex items-center gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-md bg-primary font-bold text-primary-foreground">
-              D
-            </span>
+            <img src="/digitize-logo.png" alt="Digitize logo" className="h-8 w-8 rounded-md" />
             <span className="text-lg font-semibold tracking-tight">Digitize</span>
           </Link>
           <nav className="hidden items-center gap-1 md:flex">
