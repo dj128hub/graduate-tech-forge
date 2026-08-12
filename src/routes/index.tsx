@@ -371,6 +371,18 @@ function Field({ label, placeholder }: { label: string; placeholder: string }) {
   );
 }
 
+function ExploreLink({ to, label }: { to: string; label: string }) {
+  return (
+    <Link
+      to={to as never}
+      className="flex items-center justify-between rounded-2xl bg-white p-4 text-sm font-bold text-[var(--ink)] shadow-sm transition-transform hover:scale-[1.02]"
+    >
+      {label}
+      <span className="text-[var(--teal-deep)]">→</span>
+    </Link>
+  );
+}
+
 function Chip({ label, on, onClick }: { label: string; on: boolean; onClick: () => void }) {
   return (
     <button
