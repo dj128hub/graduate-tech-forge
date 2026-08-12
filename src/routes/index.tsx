@@ -50,9 +50,7 @@ function Shell({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen flex-col">
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6">
         <Link to="/" className="flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-[var(--teal-deep)] text-lg font-bold text-white">
-            D
-          </span>
+          <img src="/digitize-logo.png" alt="Digitize logo" className="h-10 w-10 rounded-xl" />
           <span className="text-lg font-bold tracking-tight">Digitize</span>
         </Link>
         <span className="text-xs font-semibold tracking-wide">Choose your path</span>
@@ -69,6 +67,11 @@ function Shell({ children }: { children: React.ReactNode }) {
 function Panel({ eyebrow, heading, sub, children }: { eyebrow: string; heading: string; sub?: string; children: React.ReactNode }) {
   return (
     <div className="surface-panel glow-teal w-full max-w-4xl rounded-3xl p-6 sm:p-10">
+      <img
+        src="/digitize-logo.png"
+        alt="Digitize logo"
+        className="mx-auto mb-5 h-20 w-20 rounded-2xl shadow-lg"
+      />
       <p className="text-center text-[11px] font-bold uppercase tracking-[0.25em] text-white/80">{eyebrow}</p>
       <h1 className="mt-3 text-center text-3xl font-bold sm:text-5xl">{heading}</h1>
       {sub ? <p className="mx-auto mt-3 max-w-xl text-center text-sm text-white/85">{sub}</p> : null}
