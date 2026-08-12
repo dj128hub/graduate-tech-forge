@@ -166,8 +166,8 @@ function Row({
 }: {
   label: string;
   name: string;
-  error?: string;
-  placeholder?: string;
+  error?: string | undefined;
+  placeholder?: string | undefined;
   type?: string;
 }) {
   return (
