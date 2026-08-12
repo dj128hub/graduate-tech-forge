@@ -83,15 +83,16 @@ const cardBtn =
 function Index() {
   const [step, setStep] = useState<Step>("path");
   const [picked, setPicked] = useState<string[]>(["website", "maintenance", "payments"]);
-  const [industry, setIndustry] = useState(industries[0]);
-  const [size, setSize] = useState(sizes[2]);
+  const [industry, setIndustry] = useState<string>(industries[0]!);
+  const [size, setSize] = useState<string>(sizes[2]!);
   const [tier, setTier] = useState("growth");
 
   const toggle = (id: string) =>
     setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
 
-  const recommended = tiers.find((t) => picked.length <= t.max) ?? tiers[2];
+  const recommended = tiers.find((t) => picked.length <= t.max) ?? tiers[2]!;
   const chosenTier = tiers.find((t) => t.id === tier) ?? recommended;
+
 
   if (step === "path") {
     return (
