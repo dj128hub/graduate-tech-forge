@@ -114,11 +114,11 @@ function Index() {
             </div>
             <div className="flex flex-col rounded-2xl bg-white p-6 text-[var(--ink)] shadow-xl">
               <span className="grid h-10 w-10 place-items-center rounded-lg bg-[var(--accent)] text-[var(--teal-deep)]">◇</span>
-              <h2 className="mt-5 text-2xl font-bold">I am a computer science graduate</h2>
+              <h2 className="mt-5 text-2xl font-bold">I'm starting out in tech</h2>
               <p className="mt-2 flex-1 text-sm text-[var(--ink-muted)]">
-                Build experience, earn money and start your technology career.
+                Computer science graduate? Build real experience, earn money and grow your portfolio.
               </p>
-              <Link to="/associates" className={`${cardBtn} mt-6 block text-center`}>
+              <Link to="/join" className={`${cardBtn} mt-6 block text-center`}>
                 Become a Digital Associate →
               </Link>
             </div>
@@ -149,6 +149,7 @@ function Index() {
             <ExploreLink to="/associates" label="Associates" />
             <ExploreLink to="/reviews" label="Work review" />
             <ExploreLink to="/request" label="Request a service" />
+            <ExploreLink to="/join" label="Become an associate" />
           </div>
           <div className="mt-8 text-center">
             <button onClick={() => setStep("path")} className="text-sm font-semibold underline">
