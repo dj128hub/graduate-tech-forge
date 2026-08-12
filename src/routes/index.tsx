@@ -43,7 +43,7 @@ const tiers = [
   { id: "pro", name: "Pro", price: "£129", max: 6, points: ["All 6 services", "Dedicated support", "Weekly check-in"] },
 ];
 
-type Step = "path" | "solutions" | "details" | "plans" | "checkout" | "done";
+type Step = "path" | "explore" | "solutions" | "details" | "plans" | "checkout" | "done";
 
 function Shell({ children }: { children: React.ReactNode }) {
   return (
