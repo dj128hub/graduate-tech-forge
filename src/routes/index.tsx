@@ -100,8 +100,8 @@ function Index() {
   if (step === "path") {
     return (
       <Shell>
-        <Panel eyebrow="One platform. Two opportunities." heading="How can Digitize help you?">
-          <div className="grid gap-5 sm:grid-cols-2">
+        <Panel eyebrow="One platform. Three ways in." heading="How can Digitize help you?">
+          <div className="grid gap-5 sm:grid-cols-3">
             <div className="flex flex-col rounded-2xl bg-white p-6 text-[var(--ink)] shadow-xl">
               <span className="grid h-10 w-10 place-items-center rounded-lg bg-[var(--accent)] text-[var(--teal-deep)]">▣</span>
               <h2 className="mt-5 text-2xl font-bold">I own a business</h2>
@@ -122,6 +122,38 @@ function Index() {
                 Become a Digital Associate →
               </Link>
             </div>
+            <div className="flex flex-col rounded-2xl bg-white p-6 text-[var(--ink)] shadow-xl">
+              <span className="grid h-10 w-10 place-items-center rounded-lg bg-[var(--accent)] text-[var(--teal-deep)]">↗</span>
+              <h2 className="mt-5 text-2xl font-bold">Explore Digitize</h2>
+              <p className="mt-2 flex-1 text-sm text-[var(--ink-muted)]">
+                Browse services, pricing, associates and the work review board.
+              </p>
+              <button className={`${cardBtn} mt-6`} onClick={() => setStep("explore")}>
+                Explore →
+              </button>
+            </div>
+          </div>
+        </Panel>
+      </Shell>
+    );
+  }
+
+  if (step === "explore") {
+    return (
+      <Shell>
+        <Panel eyebrow="Explore the platform" heading="Where to next?" sub="Jump straight to any section of the site.">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <ExploreLink to="/" label="Home" />
+            <ExploreLink to="/services" label="Services" />
+            <ExploreLink to="/pricing" label="Pricing" />
+            <ExploreLink to="/associates" label="Associates" />
+            <ExploreLink to="/reviews" label="Work review" />
+            <ExploreLink to="/request" label="Request a service" />
+          </div>
+          <div className="mt-8 text-center">
+            <button onClick={() => setStep("path")} className="text-sm font-semibold underline">
+              Back to start
+            </button>
           </div>
         </Panel>
       </Shell>
